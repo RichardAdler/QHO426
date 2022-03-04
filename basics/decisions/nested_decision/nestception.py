@@ -18,3 +18,5 @@ elif(look == 'in the lab'):
         print("Yes! I found my battery!")
     else:
         print("Found some tools but no battery.")
+
+print("I do not know where that is but I will keep looking.")
