@@ -1,24 +1,29 @@
-from random import randrange
+import basics.output.simple_message as simple_message
+import basics.output.multiline_message as multiline_message
 
-min = int(input("Please enter the minimum value: "))
-max = int(input("Please enter the maximum value: "))
+def run_block_a():
+    print("Which program in 'Block A: Basics' do you wish to run?")
+    response = input()
+    if (response == "simple_message"):
+        simple_message.run()
+    elif (response == "multiline_message"):
+        multiline_message.run()
 
-random = randrange(min, max)
 
-guess = int(input(f"I am thinking of a number between {min} and {max}.  Can you guess what it is?\n"))
+def run():
+    is_running = True
 
-def play_guess_the_number(guess):
+    while(is_running):
+        print("What would you like to do?")
+        print("[a] Run 'Block A: Basics' programs")
+        print("[q] Quit")
+        response = input()
 
-    while guess != random:
-        if guess < random and guess >= min:
-            print("\nYour guess is too low.")
-            guess = int(input("Try again.\n"))        
-        elif guess > random and guess <= max:
-            print("\nYour guess is too high.")
-            guess = int(input("Try again.\n"))
+        if (response == "a"):
+            run_block_a()
+        elif (response == "q"):
+            break
         else:
-            guess = int(input("Your guess is not in the number range you defined. Try again.\n"))
-    print("Congratulations! You guessed my number!")
+            print("Invalid option! Please try again.")
 
-
-play_guess_the_number(guess)
+run()
