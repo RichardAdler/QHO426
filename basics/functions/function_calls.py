@@ -1,18 +1,16 @@
 
 word = input("Enter a word: ")
 
-print("1) Display in a Box – display the word in an ascii art box\n2) Display Lower-case – display the word in lower-case e.g. hello\n3) Display Upper-case – display the word in upper-case e.g. HELLO\n4) Display Mirrored – display the word with its mirrored word e.g. Hello | olleH\n5) Repeat – ask the user how many times to display the word and then display the word that many   times alternating between upper-case and lower-case.\n")
+print("1) Display in a Box\n2) Display Lower-case\n3) Display Upper-case\n4) Display Mirrored\n5) Repeat\n")
 
 select = int(input("Please select one of the options above: "))
 
-def box():
-    print( " ____________________________ ")
-    print(f"|                            |")
-    print(f"|                            |")
-    print(f"|           {word}           |")
-    print(f"|                            |")
-    print(f"|                            |")
-    print( "|____________________________|")
+def box(word):
+    
+    num_dashes = 4 + len(word)
+    print("-" * num_dashes)
+    print("| {} |".format(word))
+    print("-" * num_dashes)
 
 
 def lower_case():
