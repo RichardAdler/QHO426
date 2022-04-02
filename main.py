@@ -1,18 +1,14 @@
-def movements():
-    path = ["Move Forward", 10, "Move Backward", 5, "Move Left", 3, "Move Right", 1]
-    return path
+import os
+def cwd():
+    path = os.getcwd()
+    print(f"Current Working Directory: {path}")
+    print(f"The directory contains the following: ")
+    for file in os.listdir(path):
+      print(file)
+
 
 def run():
-    print("Moving...")
-    a = movements()
-    b = 1
-    for direction in a[0::2]:
-        steps = a[b]
-        b += 2 
-        print(f"{direction} for {steps} steps")
+    print("Processing...")
+    cwd()
 
 run()
-#for i in range(1, 11):
- #  for j in range(1, 11):
-
-  #  print(f"{i}x{j} = {i*j}")
